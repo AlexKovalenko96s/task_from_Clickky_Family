@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="939.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.kas.clickky_Family_third.Controller">
+   <children>
+      <TableView fx:id="table" prefHeight="212.0" prefWidth="947.0">
+        <columns>
+          <TableColumn fx:id="t_ip" prefWidth="132.0" text="IP" />
+            <TableColumn fx:id="t_browser" prefWidth="132.0" text="Браузер" />
+          <TableColumn fx:id="t_os" prefWidth="132.0" text="Ос" />
+            <TableColumn fx:id="t_firstUrl" prefWidth="200.0" text="First url" />
+            <TableColumn fx:id="t_lastUrl" minWidth="0.0" prefWidth="200.0" text="Last url" />
+            <TableColumn fx:id="t_uniqueUrl" prefWidth="75.0" text="Unique url" />
+            <TableColumn fx:id="t_time" prefWidth="75.0" text="Time" />
+        </columns>
+      </TableView>
+      <Button layoutX="815.0" layoutY="241.0" mnemonicParsing="false" onAction="#addCSV" text="Add csv" />
+      <Button layoutX="878.0" layoutY="241.0" mnemonicParsing="false" onAction="#seeCSV" text="See csv" />
+   </children>
+</AnchorPane>
