@@ -18,13 +18,15 @@ public class Controller {
 	public void press(ActionEvent e) throws SQLException {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/clickky_family", "root", "root");
 		Statement rstat = conn.createStatement();
+
 		ResultSet result = rstat
 				.executeQuery("select first.company, COUNT(first.type)<10 and sum(first.type like '%table%')>=3 "
 						+ "and sum(first.type like '%phone%')>sum(first.type like '%table%') from first  group by first.company");
+
 		while (result.next()) {
-			if (result
-					.getString(
-							"COUNT(first.type)<10 and sum(first.type like '%table%')>=3 and sum(first.type like '%phone%')>sum(first.type like '%table%')")
+			if (result.getString(
+					"COUNT(first.type)<10 and sum(first.type like '%table%')>=3 and sum(first.type like '%phone%')>sum(first.type like '%table%')")
+
 					.equals("1")) {
 				label_name.setText(result.getString("company"));
 			} else {
